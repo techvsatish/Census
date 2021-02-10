@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210210073915) do
+ActiveRecord::Schema.define(version: 20210210121022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "statistics", force: :cascade do |t|
+    t.string "dimension"
+    t.string "british_columbia"
+    t.string "ha_total"
+    t.string "ha1_interior"
+    t.string "ha2_fraser"
+    t.string "ha3_vancouver_coastal"
+    t.string "ha4_vancouver_island"
+    t.string "ha5_northern"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
