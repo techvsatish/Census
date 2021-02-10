@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'expenses/index'
+
+  get 'statistics/index'
+
   devise_for :users
   get 'home/index'
 
