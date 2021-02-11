@@ -27,10 +27,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
-gem 'axlsx'
-gem 'roo' #for file import data
+#Using the gem for Excell downloads
+gem 'axlsx', '2.1.0.pre'
+#Using the gem for Excell Upload Data
+gem 'roo', '~> 2.1.0' # for file import data
 gem 'roo-xls' # for file import data
-gem 'zip-zip'
+
+gem 'kaminari'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

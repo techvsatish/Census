@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'statistics/index'
   post '/import_statistics'=> 'statistics#import_statistics'
+  post '/import_expenses'=> 'expenses#import_expenses'
 
   devise_for :users
 

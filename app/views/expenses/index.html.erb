@@ -1,3 +1,37 @@
 <div align="center">
   <h1>Expenses</h1>
+  <div> 
+  <%= button_to 'Import', import_expenses_path, method: 'post',class: "st_import_data"  %>
+</div>
+<div>
+<%= paginate @data %>
+</div>
+<div class="st_index">
+  <div class="box-body">
+    <table id="datatbl",class="table table-hover">
+      <thead>
+        <tr>
+          <th>HSDA </th>
+          <th>HA </th>
+          <th>Service </th>
+          <th>Service Type </th>
+          <th>M_20092010 </th>
+          <th>F_20092010</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%  @data.each do |data| %>
+          <tr>
+            <td><%= data.hsda %></td>
+            <td><%= data.ha %></td>
+            <td><%= data.service %></td>
+            <td><%= data.service_type %></td>
+            <td><%= data.m_20092010 %></td>
+            <td><%= data.f_20092010 %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 </div>

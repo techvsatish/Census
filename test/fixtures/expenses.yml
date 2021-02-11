@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hsda: MyString
+  ha: MyString
+  service: MyString
+  service_type: MyString
+  m_20052006: MyString
+  m_20062007: MyString
+  m_20072008: MyString
+  m_20082009: MyString
+  m20092010: MyString
+
+two:
+  hsda: MyString
+  ha: MyString
+  service: MyString
+  service_type: MyString
+  m_20052006: MyString
+  m_20062007: MyString
+  m_20072008: MyString
+  m_20082009: MyString
+  m20092010: MyString
