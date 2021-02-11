@@ -31,16 +31,28 @@ function getservicetypes(obj)
 }
 
 function getservices(obj)
-{  
-  
+{    
   var service = $('#service option:selected').val();  
-  alert(service);
   $.ajax({
    url: "/esearch",
    type: "GET",
    dataType: "script",
    data: {
      service: service               
+   }
+ });
+}
+
+
+function getlistbygender(obj)
+{    
+  var gender = $('#gender option:selected').val();  
+  $.ajax({
+   url: "/gendersearch",
+   type: "GET",
+   dataType: "script",
+   data: {
+    gender: gender               
    }
  });
 }

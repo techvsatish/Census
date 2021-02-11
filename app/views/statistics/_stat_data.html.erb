@@ -1,0 +1,28 @@
+<table id="datatbl",class="table table-hover">
+<thead>
+  <tr>
+    <th>Dimension </th>
+    <th>British Columbia </th>
+    <th>HA Total </th>
+    <th>HA1 Interior </th>
+    <th>HA2 Fraser </th>
+    <th>Vancouver Coastal </th>
+    <th>HA4 Vancouver Island </th>
+    <th>HA5 Northern </th>
+  </tr>
+</thead>
+<tbody>
+  <%  @stat.each do |data| %>
+    <tr>
+      <td><%= data["dimension"] %></td>
+      <td><%= data["sum_of_british_columbia"] %></td>
+      <td><%= data["sum_of_ha_total"] %></td>
+      <td><%= data["sum_of_ha1_interior"] %></td>
+      <td><%= data["sum_of_ha2_fraser"] %></td>
+      <td><%= data["sum_of_ha3_vancouver_coastal"] %></td>
+      <td><%= data["sum_of_ha4_vancouver_island"]%></td>
+      <td><%= data["sum_of_ha5_northern"] %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

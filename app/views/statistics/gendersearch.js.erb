@@ -1,0 +1,6 @@
+
+$('.js_gender').empty();
+$(".st_index").remove();
+<% if params[:gender].present?%>  
+  $('.js_gender').append("<%= escape_javascript( render partial: 'stat_data', locals: { stat: @stat }) %>");
+<%end%>

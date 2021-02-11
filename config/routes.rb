@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/import_statistics'=> 'statistics#import_statistics'
   post '/import_expenses'=> 'expenses#import_expenses'
   get '/esearch'=> 'expenses#esearch'
+  get '/gendersearch'=> 'statistics#gendersearch'
   
 
   devise_for :users

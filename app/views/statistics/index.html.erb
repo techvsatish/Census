@@ -4,7 +4,16 @@
     <%= button_to 'Import', import_statistics_path, method: 'post',class: "st_import_data"  %>
   </div>
   <div>
-  <%= paginate @data %>
+    <%= paginate @data %>
+  </div>
+  <div class="st_filter">
+    <%= form_with url: gendersearch_path do |f| %>
+      <%= f.label :gender %>      
+      <%= select_tag("gender", options_for_select(gender_list,params[:per_page].to_i),
+      {:name => "gender",:include_blank => 'Select Gender',:onchange=>"getlistbygender(this);"} ) %>
+    <% end %>
+  </div>
+  <div class="js_gender">
   </div>
   <div class="st_index">
     <div class="box-body">
