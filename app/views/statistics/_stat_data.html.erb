@@ -1,3 +1,22 @@
+<%= form_tag(statdownload_path(@stat), {:method => :get}) do %>
+	<h3 style="margin:1%;"></h3>
+
+	<div class="box box-info">
+	  <div class="box-body">
+		  <div class="row">
+		  	<div class="col-md-12">
+          <div class="text-center">
+          <%= hidden_field_tag :tab ,value: params[:gender] %>
+            <%= submit_tag "Download",format: :xls, class: "btn d_btn btn-success" %>	
+            
+		  			<%#= link_to   'Print', { :action => "get_lms_final_report", :controller => "user_answers",format: :xls}, :class=> "btn btn-primary",target: '_blank'%>
+		  		</div>
+		  	</div>
+		  </div>
+    </div>
+  </div>
+
+<% end %>
 <table id="datatbl",class="table table-hover">
 <thead>
   <tr>

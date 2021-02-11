@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   post '/import_expenses'=> 'expenses#import_expenses'
   get '/esearch'=> 'expenses#esearch'
   get '/gendersearch'=> 'statistics#gendersearch'
-  
-
+  get '/statdownload' => 'statistics#statdownload'
   devise_for :users
 
   root to: "home#index"

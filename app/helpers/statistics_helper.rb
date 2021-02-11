@@ -4,6 +4,5 @@ module StatisticsHelper
 			'Male'=>'Male',
       'Female'=>'Female'
 		}
-	end
-  
+	end  
 end
