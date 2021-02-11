@@ -1,37 +1,55 @@
 <div align="center">
   <h1>Expenses</h1>
-  <div> 
-  <%= button_to 'Import', import_expenses_path, method: 'post',class: "st_import_data"  %>
-</div>
-<div>
-<%= paginate @data %>
-</div>
-<div class="st_index">
-  <div class="box-body">
-    <table id="datatbl",class="table table-hover">
-      <thead>
-        <tr>
-          <th>HSDA </th>
-          <th>HA </th>
-          <th>Service </th>
-          <th>Service Type </th>
-          <th>M_20092010 </th>
-          <th>F_20092010</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%  @data.each do |data| %>
-          <tr>
-            <td><%= data.hsda %></td>
-            <td><%= data.ha %></td>
-            <td><%= data.service %></td>
-            <td><%= data.service_type %></td>
-            <td><%= data.m_20092010 %></td>
-            <td><%= data.f_20092010 %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  
+  <div class="row">
+    <div> 
+      <%= button_to 'Import', import_expenses_path, method: 'post',class: "st_import_data"  %>
+    </div>
+    <%= paginate @data %>
+    <div class="st_filter">
+      <%= form_with url: esearch_path do |f| %>
+        <%= f.label :service %>
+        
+        <%= select_tag("service", options_for_select(get_service_list,params[:per_page].to_i),
+        {:name => "service",:include_blank => 'Select Service',:onchange=>"getservices(this);"} ) %>
+        <%= f.label :service_type %>
+        <%= select_tag("service_type", options_for_select(get_service_type_list,params[:per_page].to_i),
+        {:name => "service_type",:include_blank => 'Select Service Type',:onchange=>"getservicetypes(this);"} ) %>
+        
+      <% end %>
+    </div>
   </div>
+  <div class="js_service_type">
+  </div>
+  
+  <div class="st_index">
+    <div class="box-body">
+      <table id="datatbl",class="table table-hover">
+        <thead>
+          <tr>
+            <th>HSDA </th>
+            <th>HA </th>
+            <th>Service </th>
+            <th>Service Type </th>
+            <th>M_20092010 </th>
+            <th>F_20092010</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%  @data.each do |data| %>
+            <tr>
+              <td><%= data.hsda %></td>
+              <td><%= data.ha %></td>
+              <td><%= data.service %></td>
+              <td><%= data.service_type %></td>
+              <td><%= data.m_20092010 %></td>
+              <td><%= data.f_20092010 %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
 </div>
-</div>
+

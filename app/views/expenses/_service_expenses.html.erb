@@ -1,0 +1,24 @@
+<table id="datatbl",class="table table-hover">
+<thead>
+  <tr>
+    <th>HSDA </th>
+    <th>HA </th>
+    <th>Service </th>
+    <th>Service Type </th>
+    <th>M_20092010 </th>
+    <th>F_20092010</th>
+  </tr>
+</thead>
+<tbody>
+  <%  @services.each do |data| %>
+    <tr>
+      <td><%= data.hsda %></td>
+      <td><%= data.ha %></td>
+      <td><%= data.service %></td>
+      <td><%= data.service_type %></td>
+      <td><%= data.m_20092010 %></td>
+      <td><%= data.f_20092010 %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

@@ -33,6 +33,9 @@ gem 'axlsx', '2.1.0.pre'
 gem 'roo', '~> 2.1.0' # for file import data
 gem 'roo-xls' # for file import data
 
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 gem 'kaminari'
 
 # Use Redis adapter to run Action Cable in production

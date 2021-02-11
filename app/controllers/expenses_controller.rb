@@ -11,4 +11,12 @@ class ExpensesController < ApplicationController
       redirect_to expenses_index_path,notice: "Unsuccessful.."
     end    
   end
+
+  def esearch    
+    if params[:stype].present?
+      @stypes = Expense.where(service_type:params[:stype])
+    else
+      @services = Expense.where(service:params[:service])
+    end
+  end
 end

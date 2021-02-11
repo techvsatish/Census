@@ -1,0 +1,11 @@
+
+$('.js_service_type').empty();
+$(".st_index").remove();
+<% if params[:stype].present?%>  
+  $('.js_service_type').append("<%= escape_javascript( render partial: 'stype_expenses', locals: { stypes: @stypes }) %>");
+<% else%>
+  $('.js_service_type').append("<%= escape_javascript( render partial: 'service_expenses', locals: { stypes: @services}) %>");
+<%end%> 
+
+
+
