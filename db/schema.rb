@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210211062759) do
+ActiveRecord::Schema.define(version: 20210211075951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,31 +20,31 @@ ActiveRecord::Schema.define(version: 20210211062759) do
     t.string "ha"
     t.string "service"
     t.string "service_type"
-    t.string "m_20052006"
-    t.string "m_20062007"
-    t.string "m_20072008"
-    t.string "m_20082009"
-    t.string "m_20092010"
-    t.string "f_20052006"
-    t.string "f_20062007"
-    t.string "f_20072008"
-    t.string "f_20082009"
-    t.string "f_20092010"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "m_20052006", precision: 15, scale: 2
+    t.decimal "m_20062007", precision: 15, scale: 2
+    t.decimal "m_20072008", precision: 15, scale: 2
+    t.decimal "m_20082009", precision: 15, scale: 2
+    t.decimal "m_20092010", precision: 15, scale: 2
+    t.decimal "f_20052006", precision: 15, scale: 2
+    t.decimal "f_20062007", precision: 15, scale: 2
+    t.decimal "f_20072008", precision: 15, scale: 2
+    t.decimal "f_20082009", precision: 15, scale: 2
+    t.decimal "f_20092010", precision: 15, scale: 2
   end
 
   create_table "statistics", force: :cascade do |t|
     t.string "dimension"
-    t.string "british_columbia"
-    t.string "ha_total"
-    t.string "ha1_interior"
-    t.string "ha2_fraser"
-    t.string "ha3_vancouver_coastal"
-    t.string "ha4_vancouver_island"
-    t.string "ha5_northern"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "british_columbia", precision: 15, scale: 2
+    t.decimal "ha_total", precision: 15, scale: 2
+    t.decimal "ha1_interior", precision: 15, scale: 2
+    t.decimal "ha2_fraser", precision: 15, scale: 2
+    t.decimal "ha3_vancouver_coastal", precision: 15, scale: 2
+    t.decimal "ha4_vancouver_island", precision: 15, scale: 2
+    t.decimal "ha5_northern", precision: 15, scale: 2
   end
 
   create_table "users", force: :cascade do |t|
