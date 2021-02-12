@@ -7,7 +7,7 @@ class ExpensesController < ApplicationController
     begin      
       @data = Expense.import_data
       redirect_to expenses_index_path,notice: "Imported successfully"
-    rescue      
+    rescue  
       redirect_to expenses_index_path,notice: "Unsuccessful"
     end    
   end
