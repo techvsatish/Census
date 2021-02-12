@@ -10,7 +10,14 @@
 
   <body>
     <%= render :partial => "layouts/header" %>
-    <%= yield %>
+    <div class="col-md-12">
+      <% flash.each do |key, message| %>
+        <div class="text-center alert alert-<%= key == 'notice'? 'success': 'danger' %>">
+          <%= message %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
     <script>
     function openNav() {
       document.getElementById("mySidebar").style.width = "250px";
