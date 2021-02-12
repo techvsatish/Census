@@ -11,7 +11,7 @@ class Statistic < ApplicationRecord
       next if i == 0
       Statistic.create(dimension:row[0], british_columbia:row[1], ha_total:row[2], ha1_interior:row[3],
                         ha2_fraser:row[4], ha3_vancouver_coastal:row[5], ha4_vancouver_island:row[6], ha5_northern:row[7])
-      
+      next if i==10 && Rail.env=="test"
     end    
   end  
 end

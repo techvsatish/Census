@@ -13,7 +13,7 @@ class Expense < ApplicationRecord
                         m_20092010:row[8], f_20052006:row[9], f_20062007:row[10], f_20072008:row[11],
                         f_20082009:row[12], f_20092010:row[13])
       
-      
+      next if i==10 && Rail.env=="test"
     end    
   end 
 end

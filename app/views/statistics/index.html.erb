@@ -1,53 +1,59 @@
+
 <div align="center">
   <h1>Statistics</h1>
   <div> 
-    <%= button_to 'Import', import_statistics_path, method: 'post',class: "st_import_data"  %>
+    <%= button_to 'Import Statistics', import_statistics_path, method: 'post',class: "st_import_data"  %>
   </div>
-  <div>
-    <%= paginate @data %>
-  </div>
-  <div class="st_filter">
-    <%= form_with url: gendersearch_path do |f| %>
-      <%= f.label :gender %>      
-      <%= select_tag("gender", options_for_select(gender_list,params[:per_page].to_i),
-      {:name => "gender",:include_blank => 'Select Gender',:onchange=>"getlistbygender(this);"} ) %>
-    <% end %>
-  </div>
-  <div class="js_gender">
-  </div>
-  <div class="st_index">
-    <div class="box-body">
-      <table id="datatbl",class="table table-hover">
-        <thead>
-          <tr>
-            <th>Dimension </th>
-            <th>British Columbia </th>
-            <th>HA Total </th>
-            <th>HA1 Interior </th>
-            <th>HA2 Fraser </th>
-            <th>Vancouver Coastal </th>
-            <th>HA4 Vancouver Island </th>
-            <th>HA5 Northern </th>
-          </tr>
-        </thead>
-        <tbody>
-          <%  @data.each do |data| %>
-            <tr>
-              <td><%= data.dimension %></td>
-              <td><%= data.british_columbia %></td>
-              <td><%= data.ha_total %></td>
-              <td><%= data.ha1_interior %></td>
-              <td><%= data.ha2_fraser %></td>
-              <td><%= data.ha3_vancouver_coastal %></td>
-              <td><%= data.ha4_vancouver_island %></td>
-              <td><%= data.ha5_northern %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+  <%if @data.empty?%>
+    <h4>Data not available</h4> 
+  <%else%>
+    <div class="p1">
+      <%= paginate @data %>
     </div>
-  </div>
+    <div class="st_filter">
+      <%= form_with url: gendersearch_path do |f| %>
+        <%= f.label :gender %>      
+        <%= select_tag("gender", options_for_select(gender_list,params[:per_page].to_i),
+        {:name => "gender",:include_blank => 'Select Gender',:onchange=>"getlistbygender(this);"} ) %>
+      <% end %>
+    </div>
+    <div class="js_gender">
+    </div>
+    <div class="st_index">
+      <div class="box-body">
+        <table id="datatbl",class="table table-hover">
+          <thead>
+            <tr>
+              <th>Dimension </th>
+              <th>British Columbia </th>
+              <th>HA Total </th>
+              <th>HA1 Interior </th>
+              <th>HA2 Fraser </th>
+              <th>Vancouver Coastal </th>
+              <th>HA4 Vancouver Island </th>
+              <th>HA5 Northern </th>
+            </tr>
+          </thead>
+          <tbody>
+            <%  @data.each do |data| %>
+              <tr>
+                <td><%= data.dimension %></td>
+                <td><%= data.british_columbia %></td>
+                <td><%= data.ha_total %></td>
+                <td><%= data.ha1_interior %></td>
+                <td><%= data.ha2_fraser %></td>
+                <td><%= data.ha3_vancouver_coastal %></td>
+                <td><%= data.ha4_vancouver_island %></td>
+                <td><%= data.ha5_northern %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <%end%>
 </div>
+
   
 
 

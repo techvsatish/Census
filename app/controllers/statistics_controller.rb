@@ -6,10 +6,9 @@ class StatisticsController < ApplicationController
   def import_statistics
     begin      
       @data = Statistic.import_data
-      redirect_to statistics_index_path,notice: "Imported successfully......."
+      redirect_to statistics_index_path,notice: "Imported successfully"
     rescue
-      render :json=> { :status=> false }
-      redirect_to statistics_index_path,notice: "Unsuccessful.."
+      redirect_to statistics_index_path,notice: "Unsuccessful"
     end    
   end
 
