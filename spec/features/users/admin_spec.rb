@@ -25,12 +25,4 @@ RSpec.feature "Users Signin" do
     expect(page).to_not have_button '☰ Open Sidebar'
     expect(page).to have_content("Signed in successfully.")
   end
-
-  # scenario "with valid credentials" do
-  #   visit "/"    
-  #   fill_in "Email", with:"satish@example.com"
-  #   fill_in "Password", with:"password"
-  #   click_button "Log in"
-  #   expect(page).to have_content("Signed in successfully.")
-  # end
 end

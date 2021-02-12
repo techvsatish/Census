@@ -9,8 +9,8 @@
 <%if current_user.is_admin==true%>
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <%= link_to 'Statistics', statistics_index_path %><br/>
-    <%= link_to 'Expenditure', expenses_index_path %><br/>
+    <%= link_to 'Statistics', statistics_index_path ,class:"stat_cls" %><br/>
+    <%= link_to 'Expenditure', expenses_index_path ,class:"expense_cls"%><br/>
   </div>    
   <div id="main">
     <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>         
