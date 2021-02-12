@@ -9,7 +9,9 @@
   </head>
 
   <body>
-    <%= render :partial => "layouts/header" %>
+    <%if user_signed_in?%>
+      <%= render :partial => "layouts/header" %>    
+    <%end%>
     <div class="col-md-12">
       <% flash.each do |key, message| %>
         <div class="text-center alert alert-<%= key == 'notice'? 'success': 'danger' %>">
